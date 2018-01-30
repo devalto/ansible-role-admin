@@ -1,0 +1,33 @@
+---
+- name: Create user.
+  become: yes
+  user:
+    name: "{{ item.name }}"
+    groups: "{{ item.groups | default(admin_groups)}}"
+    shell: /bin/bash
+  with_items: "{{ admin_users }}"
+
+- name: Set authorized key.
+  become: yes
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.authorized_keys}}"
+  with_items: "{{ admin_users}}"
+
+- name: Set passwordless sudo.
+  become: yes
+  lineinfile:
+    dest: /etc/sudoers.d/90-cloud-init-users
+    state: present
+    regexp: '^{{ item.name }}'
+    line: '{{ item.name }} ALL=(ALL) NOPASSWD:ALL'
+    validate: 'visudo -cf %s'
+  with_items: "{{ admin_users }}"
+
+- name: Disallow root SSH access
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^PermitRootLogin"
+    line: "PermitRootLogin no"
+    state: present
+  notify: Restart ssh

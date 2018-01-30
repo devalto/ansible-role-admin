@@ -1,0 +1,11 @@
+---
+galaxy_info:
+  author: Yanick Châteauvert
+  description: Create and manage admin users.
+  company: DevAlto technologies inc
+  galaxy_tags: []
+  min_ansible_version: 2.3
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all

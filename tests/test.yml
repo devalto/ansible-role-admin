@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  remote_user: root
+  vars:
+    - admin_users:
+      - name: devalto
+        authorized_keys: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9A7cs40W5Mtq/rNye7+tMlKQZ5udAxhogQr/B3ske//AeLyI3ZtjrXr4GwKtyyF0vluLMsSwfg+wk+LwTdRlfqSFAOXx57csZ0EhKrQ7BJ/2zbz2ZO+R6pZUSX6v2JT/RbfJify+2UrNzKUnPMPEPEMc7BbdevU+Slwq6Z7BhcZG5XPmL//NbTDLh4EX3oui9Tl5LJY69p8l5O3d/tNjn8FuQ6RaPoP1sW+CZUuPlcm1boWoUbjNLMtVrb/VLIEDSUCQJXk9j4wczJOXyStuQuRn66bP1JRh34nFuKEY1HyRp9JdCIDyWUlWNOZPVRvCrB3juSUb1OJCLEaDNJ+N9
+  roles:
+    - role_under_test
