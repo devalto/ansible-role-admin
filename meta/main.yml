@@ -2,7 +2,8 @@
 galaxy_info:
   author: Yanick Châteauvert
   description: Create and manage admin users.
-  company: DevAlto technologies inc
+  company: "Technologies DevAlto inc"
+  license: "license (BSD, MIT)"  
   galaxy_tags: []
   min_ansible_version: 2.3
   platforms:
