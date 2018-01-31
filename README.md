@@ -1,6 +1,6 @@
 # devalto.admin
 
-[![Ansible Role](https://img.shields.io/ansible/role/9598.svg?maxAge=2592000)](https://galaxy.ansible.com/devalto/redis/)
+[![Ansible Role](https://travis-ci.org/devalto/ansible-role-admin.svg?branch=master)](https://galaxy.ansible.com/devalto/redis/)
 
 This is a Ansible role to configure admin users
 
